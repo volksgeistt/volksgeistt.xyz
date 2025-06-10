@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Ujjawal Singh (Volksgeist) - Backend Developer, Programmer, Cybersecurity Enthusiast">
+<meta name="author" content="Ujjawal Singh">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../xyz.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<title>Ujjawal Singh</title>
+<link rel="icon" href="./xyz.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="des/style.css" type="text/css">
+
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="./" class="navbar-brand">— volksgeist</a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li>
+                    <a href="./eastereggtypeshyt/" class="nav-link easter-egg">Easter Egg?</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link easter-egg">Blog?</a>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars menu-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+
+  <div class="profile-container" id="profileContainer">
+    <img class="avatar-img" id="avatar" src="" alt="Profile Picture" />
+    <div class="status-circle" id="statusCircle"></div>
+  </div>
+  <div class="username" id="username">Loading...
+    <div class="platform-icons" id="platformIcons"></div>
+  </div>
+  <div class="activity-status" id="activityStatus">Loading...</div>
+  <div class="get-ig">
+          Created by volksgeistt — Live Discord presence.
+<br>
+    Connect with me through <a href="mailto:exrmaniac@gmail.com" target="_blank">mail</a>
+  </div>
+
+  <div class="social-media-buttons">
+  <a href="https://github.com/volksgeistt" target="_blank" class="social-btn github" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://www.instagram.com/volksgeistt" target="_blank" class="social-btn instagram" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://discord.com/users/1181256087081603116" target="_blank" class="social-btn discord" title="Discord">
+    <i class="fab fa-discord"></i>
+  </a>
+  <a href="https://twitter.com/volksgeistt" target="_blank" class="social-btn twitter" title="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+</div>
+  <div class="footer">surviving on caffeine & contradictions.</div>
+
+<div id="uptime">last deployment : 0d 0h 0m 0s</div>
+
+<div class="tech-stack-container">
+  <a href="./techstack/" class="tech-stack-btn" title="Explore My Tech Stack">
+    <i class="fas fa-code tech-icon"></i>
+    <span class="btn-text">View Tech Stack</span>
+  </a>
+</div>
+
+<div class="tech-stack-container">
+  <a href="./projects/" class="tech-stack-btn" title="Explore My Tech Stack">
+    <i class="fas fa-gear"></i>
+    <span class="btn-text">View Projects</span>
+  </a>
+</div>
+
+
+  <button class="avatar-button" onclick="toggleAvatarFrame()" title="View Avatar History">
+    <i class="fa-regular fa-image"></i>
+  </button>
+  
+  <div class="avatar-frame" id="avatarFrame">
+    <p style="color: white; font-size: 0.9rem; margin-bottom: 10px;" id="avatarCount">Loading avatars...</p>
+    <div id="avatarImages" style="display: flex; flex-wrap: wrap;"></div>
+  </div>
+  
+  <div id="loadingScreen">
+    <div class="loader"></div>
+    <div class="loading-text">fetching info & status...</div>
+  </div>
+    <script>
+        const navbar = document.getElementById('navbar');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navbarNav = document.getElementById('navbarNav');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navbarNav.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            
+            const icon = mobileMenuToggle.querySelector('.menu-icon');
+            if (navbarNav.classList.contains('active')) {
+                icon.className = 'fas fa-times menu-icon';
+            } else {
+                icon.className = 'fas fa-bars menu-icon';
+            }
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navbarNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                const icon = document.querySelector('.menu-icon');
+                if (icon) {
+                    icon.className = 'fas fa-bars menu-icon';
+                }
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target)) {
+                navbarNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                const icon = document.querySelector('.menu-icon');
+                if (icon) {
+                    icon.className = 'fas fa-bars menu-icon';
+                }
+            }
+        });
+    </script>
+  <script src="js/index.js"></script>
+  <script src="js/deployment.js"></script>
+
+</body>
+</html>

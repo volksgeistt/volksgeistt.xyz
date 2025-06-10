@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Portfolio Easter Egg - Find the Hidden Surprise!">
+    <title>Hidden Secrets - Portfolio</title>
+    <link rel="icon" href="../xyz.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./des/style.css" type="text/css">
+
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <a href="../index.html" class="back-home">
+        <i class="fas fa-arrow-left"></i>
+        Back to Home
+    </a>
+
+    <div class="container">
+        <header class="header">
+            <h1>The Easter Egg</h1>
+            <p>Some fun and random Easter Egg & Cryptic Challenges.<br>Are you worthy?</p>
+        </header>
+
+        <div class="challenges">
+
+            <section class="challenge-section">
+                <div class="challenge-title">
+                    <i class="fas fa-key"></i>
+                    The Ancient Cipher
+                </div>
+                <p>The Romans used this method to hide their secrets. Shift by the number of fingers on one hand plus two.</p>
+                <div class="cipher-text" id="cipherText">MJQQT BTWQI!</div>
+                <input type="text" class="input-field" id="cipherInput" placeholder="Decode the message..." maxlength="20">
+                <button class="check-btn" onclick="checkCipher()">Decode</button>
+                <button class="hint-btn" onclick="toggleHint('cipherHint')">Need a hint?</button>
+                <div class="hint-text" id="cipherHint">Caesar cipher with shift of 7. Each letter moves 7 positions back in the alphabet.</div>
+                <div class="achievement" id="cipherAchievement">
+                    Caesar's Apprentice! You cracked the ancient code!
+                </div>
+            </section>
+
+            <section class="challenge-section">
+                <div class="challenge-title">
+                    <i class="fas fa-microchip"></i>
+                    Binary Matrix
+                </div>
+                <p>Create the binary representation of the ASCII value of 'A' (uppercase letter A):</p>
+                <div class="binary-grid" id="binaryGrid">
+                    <div class="binary-digit" onclick="toggleBinary(0)">0</div>
+                    <div class="binary-digit" onclick="toggleBinary(1)">0</div>
+                    <div class="binary-digit" onclick="toggleBinary(2)">0</div>
+                    <div class="binary-digit" onclick="toggleBinary(3)">0</div>
+                    <div class="binary-digit" onclick="toggleBinary(4)">0</div>
+                    <div class="binary-digit" onclick="toggleBinary(5)">0</div>
+                    <div class="binary-digit" onclick="toggleBinary(6)">0</div>
+                    <div class="binary-digit" onclick="toggleBinary(7)">0</div>
+                </div>
+                <button class="check-btn" onclick="checkBinary()">Verify Binary</button>
+                <button class="hint-btn" onclick="toggleHint('binaryHint')">Need a hint?</button>
+                <div class="hint-text" id="binaryHint">ASCII value of 'A' is 65. Convert 65 to 8-bit binary: 01000001</div>
+                <div class="achievement" id="binaryAchievement">
+                    BINGO! You speak the language of machines!
+                </div>
+            </section>
+
+            <section class="challenge-section">
+                <div class="challenge-title">
+                    <i class="fas fa-broadcast-tower"></i>
+                    Telegraph Transmission
+                </div>
+                <p>This message was sent via telegraph. What does it say?</p>
+                <div class="morse-display">.... . .-.. .--. / -- .</div>
+                <input type="text" class="input-field" id="morseInput" placeholder="Translate the message..." maxlength="20">
+                <button class="check-btn" onclick="checkMorse()">Translate</button>
+                <button class="hint-btn" onclick="toggleHint('morseHint')">Need a hint?</button>
+                <div class="hint-text" id="morseHint">H=...., E=., L=.-.., P=.--., space between words, M=--, E=.</div>
+                <div class="achievement" id="morseAchievement">
+                    DAMN Congratulations! You mastered the dots and dashes!
+                </div>
+            </section>
+
+            <section class="challenge-section">
+                <div class="challenge-title">
+                    <i class="fas fa-calculator"></i>
+                    The Fibonacci Secret
+                </div>
+                <p>Enter the next number in this famous sequence:</p>
+                <div class="sequence-display">1, 1, 2, 3, 5, 8, 13, ?</div>
+                <input type="number" class="input-field" id="fibInput" placeholder="What comes next?" max="100">
+                <button class="check-btn" onclick="checkFibonacci()">Check Answer</button>
+                <button class="hint-btn" onclick="toggleHint('fibHint')">Need a hint?</button>
+                <div class="hint-text" id="fibHint">Each number is the sum of the two preceding ones. 8 + 13 = ?</div>
+                <div class="achievement" id="fibAchievement">
+                    Mathematical Genius! Fibonacci would be proud.
+                </div>
+            </section>
+
+            <section class="challenge-section">
+                <div class="challenge-title">
+                    <i class="fas fa-terminal"></i>
+                    Developer's Secret
+                </div>
+                <p>Open the browser console (F12) and execute the hidden function. Look for clues in the console logs...</p>
+                <input type="text" class="input-field" id="consoleInput" placeholder="What did you discover?" maxlength="30">
+                <button class="check-btn" onclick="checkConsole()">Submit Discovery</button>
+                <div class="achievement" id="consoleAchievement">
+                    Console Hacker! You found the developer's secret!
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="final-modal" id="finalModal">
+        <div class="final-modal-content">
+            <h2>Easter Egg Completion</h2>
+            <p style="color: #b3b3b3; font-size: 1.2rem; margin-bottom: 2rem;">
+                Congratulations! You have successfully completed all challenges and proven yourself worthy of the title "Easter Egg Breaker".
+            </p>
+            <p style="color: #8b5cf6; font-size: 1.1rem; margin-bottom: 2rem;">
+                <strong>Achievement Unlocked:</strong> <em>Easter Egg +1</em><br>
+                <strong>Secret Message:</strong> <em>"The greatest encryption is curiosity itself"</em>
+            </p>
+            <button class="check-btn" onclick="closeFinalModal()" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                Epic! 🚀
+            </button>
+        </div>
+    </div>
+
+    <script src="./js/main.js">
+    </script>
+</body>
+</html>
